@@ -19,7 +19,7 @@ decisions = {
                 complete_effect = {
                     add_balance_of_power_value = {
                         id = jap_kor_bop
-                        value = 0.05
+                        value = 0.1
                     }
                 }
                 ai_will_do = { factor = 1 }
@@ -34,7 +34,7 @@ decisions = {
                 complete_effect = {
                     add_balance_of_power_value = {
                         id = jap_kor_bop
-                        value = -0.05
+                        value = -0.1
                     }
                 }
                 ai_will_do = { factor = 1 }
