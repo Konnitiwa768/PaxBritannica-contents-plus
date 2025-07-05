@@ -1,0 +1,70 @@
+decisions = {
+
+    jap_kor_bop_category = {
+        icon = GFX_decision_generic_political_reform
+        allowed = { always = yes }
+        visible = {
+            OR = {
+                tag = JAP
+                tag = KOR
+            }
+        }
+        desc = "日本と韓国の影響力争いに介入できます。"
+
+        decisions = {
+
+            jap_influence_korea = {
+                icon = GFX_decision_generic_political_reform
+
+                available = {
+                    tag = JAP
+                }
+
+                visible = {
+                    tag = JAP
+                }
+
+                cost = 50
+                days_remove = 10
+
+                complete_effect = {
+                    add_balance_of_power_value = {
+                        id = jap_kor_bop
+                        value = 0.05
+                    }
+                }
+                
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+
+            kor_resist_japan = {
+                icon = GFX_decision_generic_political_reform
+
+                available = {
+                    tag = KOR
+                }
+
+                visible = {
+                    tag = KOR
+                }
+
+                cost = 50
+                days_remove = 10
+
+                complete_effect = {
+                    add_balance_of_power_value = {
+                        id = jap_kor_bop
+                        value = -0.05
+                    }
+                }
+                
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+
+        }
+    }
+}
