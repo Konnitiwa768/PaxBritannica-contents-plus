@@ -1,0 +1,672 @@
+focus_tree = {
+    id = JAP_focus
+    country = { tag = JAP }
+
+    ####################################
+    # 軍事ルート (12個)
+    ####################################
+    focus = {
+        id = JAP_bushido_spirit
+        icon = GFX_goal_generic_army_morale
+        x = 0 y = 0
+        cost = 10
+        completion_reward = {
+            add_war_support = 0.12
+            add_stability = 0.08
+            add_army_experience = 40
+        }
+        description = "武士道精神を軍に復活させ、兵士の士気と国民の団結を飛躍的に高める。"
+    }
+    focus = {
+        id = JAP_Imperial_Navy_Reform
+        prerequisite = { focus = JAP_bushido_spirit }
+        icon = GFX_goal_generic_navy_experience
+        x = 1 y = 1
+        cost = 10
+        completion_reward = {
+            add_navy_experience = 60
+            add_war_support = 0.1
+            add_political_power = 75
+            add_naval_capacity = 5
+        }
+        description = "皇国海軍の近代化を急ぎ、太平洋の覇権を目指す。"
+    }
+    focus = {
+        id = JAP_samurai_militia
+        prerequisite = { focus = JAP_bushido_spirit }
+        icon = GFX_goal_generic_military_citizen
+        x = -1 y = 1
+        cost = 10
+        completion_reward = {
+            add_army_experience = 30
+            add_war_support = 0.08
+            add_stability = 0.07
+            add_infantry_weeks = 12
+        }
+        description = "地方の武士階級を再編し、忠誠心あふれる民兵を創設する。"
+    }
+    focus = {
+        id = JAP_sengoku_industrialization
+        prerequisite = { focus = JAP_samurai_militia }
+        icon = GFX_goal_generic_construct_mil_factory
+        x = 0 y = 2
+        cost = 10
+        completion_reward = {
+            add_war_support = 0.18
+            add_political_power = 90
+            add_stability = 0.1
+            add_military_factory = 3
+        }
+        description = "戦国時代の統率力を模範に、軍需工業を爆発的に増強。"
+    }
+    focus = {
+        id = JAP_military_doctrine_innovation
+        prerequisite = { focus = JAP_sengoku_industrialization }
+        icon = GFX_goal_generic_army_doctrine
+        x = -1 y = 3
+        cost = 10
+        completion_reward = {
+            add_army_experience = 50
+            add_war_support = 0.12
+            add_land_doctrine = 1
+        }
+        description = "新戦術の開発で陸軍の戦闘力を大幅に強化。"
+    }
+    focus = {
+        id = JAP_great_navy_doctrine
+        prerequisite = { focus = JAP_Imperial_Navy_Reform }
+        icon = GFX_goal_generic_navy_doctrine
+        x = 1 y = 3
+        cost = 10
+        completion_reward = {
+            add_navy_experience = 50
+            add_war_support = 0.12
+            add_political_power = 65
+            add_naval_doctrine = 1
+        }
+        description = "海軍戦術の刷新により、艦隊の殲滅力が飛躍的に向上。"
+    }
+    focus = {
+        id = JAP_kamikaze_spirit
+        prerequisite = { focus = JAP_military_doctrine_innovation focus = JAP_great_navy_doctrine }
+        icon = GFX_goal_generic_special_forces
+        x = 0 y = 4
+        cost = 10
+        completion_reward = {
+            add_war_support = 0.22
+            add_stability = 0.15
+            add_army_experience = 60
+            add_navy_experience = 55
+            add_special_forces = 7
+        }
+        description = "神風精神を軍に浸透させ、士気と戦力を圧倒的に高める。"
+    }
+    focus = {
+        id = JAP_militia_training_campaign
+        prerequisite = { focus = JAP_samurai_militia }
+        icon = GFX_goal_generic_training
+        x = -2 y = 2
+        cost = 10
+        completion_reward = {
+            add_army_experience = 35
+            add_war_support = 0.1
+            add_stability = 0.09
+            add_infantry_weeks = 10
+        }
+        description = "民兵の集中訓練で防衛力の底上げを行う。"
+    }
+    focus = {
+        id = JAP_strategic_defense_fortification
+        prerequisite = { focus = JAP_militia_training_campaign }
+        icon = GFX_goal_generic_fortify
+        x = 0 y = 5
+        cost = 10
+        completion_reward = {
+            add_stability = 0.22
+            add_war_support = 0.15
+            add_political_power = 60
+            add_fort = 3
+        }
+        description = "重要拠点に堅牢な防衛網を築き、侵攻を阻止する。"
+    }
+    focus = {
+        id = JAP_special_forces_division
+        prerequisite = { focus = JAP_kamikaze_spirit }
+        icon = GFX_goal_generic_special_forces
+        x = 1 y = 5
+        cost = 10
+        completion_reward = {
+            add_special_forces = 8
+            add_army_experience = 50
+            add_war_support = 0.12
+            add_political_power = 50
+        }
+        description = "忍者や特殊戦闘部隊を編成し、敵の戦略を撹乱する。"
+    }
+    focus = {
+        id = JAP_air_force_expansion
+        prerequisite = { focus = JAP_special_forces_division }
+        icon = GFX_goal_generic_air_force
+        x = 2 y = 6
+        cost = 10
+        completion_reward = {
+            add_air_experience = 60
+            add_war_support = 0.18
+            add_military_factory = 1
+        }
+        description = "航空戦力の強化により制空権を確立する。"
+    }
+    focus = {
+        id = JAP_military_unification
+        prerequisite = { focus = JAP_strategic_defense_fortification focus = JAP_air_force_expansion }
+        icon = GFX_goal_generic_army_chief
+        x = 0 y = 6
+        cost = 10
+        completion_reward = {
+            add_army_experience = 70
+            add_navy_experience = 70
+            add_air_experience = 55
+            add_war_support = 0.3
+            add_stability = 0.2
+            add_political_power = 100
+        }
+        description = "陸海空軍の統合を推進し、総合戦力を飛躍的に向上させる。"
+    }
+
+    ####################################
+    # 政治・宗教ルート (10個)
+    ####################################
+    focus = {
+        id = JAP_emperor_divinity
+        icon = GFX_goal_generic_religious
+        x = -4 y = 0
+        cost = 10
+        completion_reward = {
+            add_stability = 0.18
+            add_war_support = 0.15
+            add_political_power = 90
+            add_research_bonus = 0.15
+        }
+        description = "天皇の神格化を推し進め、国家の結束を強固にする。"
+    }
+    focus = {
+        id = JAP_state_shinto_revival
+        prerequisite = { focus = JAP_emperor_divinity }
+        icon = GFX_goal_generic_religious
+        x = -4 y = 1
+        cost = 10
+        completion_reward = {
+            add_stability = 0.15
+            add_political_power = 80
+            add_war_support = 0.12
+        }
+        description = "国家神道の復興により国民の忠誠心を高める。"
+    }
+    focus = {
+        id = JAP_meiji_constitution_reform
+        prerequisite = { focus = JAP_state_shinto_revival }
+        icon = GFX_goal_generic_political_reform
+        x = -5 y = 2
+        cost = 10
+        completion_reward = {
+            add_stability = 0.12
+            add_political_power = 100
+        }
+        description = "明治憲法の再編を通じて、強力な中央政府を確立。"
+    }
+    focus = {
+        id = JAP_government_centralization
+        prerequisite = { focus = JAP_meiji_constitution_reform }
+        icon = GFX_goal_generic_political_pressure
+        x = -4 y = 3
+        cost = 10
+        completion_reward = {
+            add_political_power = 120
+            add_stability = 0.1
+        }
+        description = "地方勢力を統制し、中央集権体制を強化。"
+    }
+    focus = {
+        id = JAP_militarist_propaganda
+        prerequisite = { focus = JAP_government_centralization }
+        icon = GFX_goal_generic_propaganda
+        x = -3 y = 4
+        cost = 10
+        completion_reward = {
+            add_war_support = 0.22
+            add_political_power = 70
+            create_wargoal = { type = puppet_wargoal target = CHI }
+        }
+        description = "国民への軍国主義的プロパガンダを強化する。中国に対する侵略権を獲得。"
+    }
+    focus = {
+        id = JAP_secret_police_establishment
+        prerequisite = { focus = JAP_government_centralization }
+        icon = GFX_goal_generic_police
+        x = -5 y = 4
+        cost = 10
+        completion_reward = {
+            add_stability = 0.15
+            add_political_power = 60
+            add_war_support = 0.07
+            add_secret_police = 3
+        }
+        description = "治安維持のため秘密警察を設立し反乱を抑制する。"
+    }
+    focus = {
+        id = JAP_nationalist_cultural_campaign
+        prerequisite = { focus = JAP_militarist_propaganda }
+        icon = GFX_goal_generic_social_policy
+        x = -2 y = 5
+        cost = 10
+        completion_reward = {
+            add_war_support = 0.18
+            add_stability = 0.15
+            add_political_power = 70
+        }
+        description = "国粋主義的文化運動で国民の士気を鼓舞する。"
+    }
+    focus = {
+        id = JAP_intellectual_purge
+        prerequisite = { focus = JAP_secret_police_establishment }
+        icon = GFX_goal_generic_political_pressure
+        x = -6 y = 5
+        cost = 10
+        completion_reward = {
+            add_stability = 0.18
+            add_political_power = 80
+            add_war_support = 0.1
+            add_political_power = 20
+        }
+        description = "思想統制を強化し反体制分子を徹底排除する。"
+    }
+    focus = {
+        id = JAP_shrine_reconstruction
+        prerequisite = { focus = JAP_state_shinto_revival }
+        icon = GFX_goal_generic_construct_civ_factory
+        x = -3 y = 5
+        cost = 10
+        completion_reward = {
+            add_stability = 0.12
+            add_political_power = 50
+            add_war_support = 0.12
+        }
+        description = "神社の再建と宗教行事の拡充により、国家の精神的基盤を強化。"
+    }
+    focus = {
+        id = JAP_propaganda_ministry
+        prerequisite = { focus = JAP_militarist_propaganda }
+        icon = GFX_goal_generic_political_pressure
+        x = -1 y = 6
+        cost = 10
+        completion_reward = {
+            add_political_power = 90
+            add_war_support = 0.25
+            add_puppet = { country = MNG puppet_type = puppet }
+        }
+        description = "プロパガンダ省を設置し国民の統制と士気を高め、蒙古を事実上の傀儡に。"
+    }
+
+    ####################################
+    # 民主ルート (8個)
+    ####################################
+    focus = {
+        id = JAP_democratic_revival
+        prerequisite = { focus = JAP_government_centralization }
+        icon = GFX_goal_generic_democracy
+        x = -6 y = 5
+        cost = 10
+        completion_reward = {
+            set_politics = { ruling_party = democratic elections_allowed = yes }
+            add_political_power = 100
+            add_stability = 0.15
+            add_war_support = 0.12
+        }
+        description = "民主主義の原則を確立し、議会制を強化する。"
+    }
+    focus = {
+        id = JAP_minoken_consolidation
+        prerequisite = { focus = JAP_democratic_revival }
+        icon = GFX_goal_generic_political_pressure
+        x = -7 y = 6
+        cost = 10
+        completion_reward = {
+            add_stability = 0.1
+            add_political_power = 60
+        }
+        description = "民権運動を強化し政治参加を拡大する。"
+    }
+    focus = {
+        id = JAP_international_cooperation
+        prerequisite = { focus = JAP_democratic_revival }
+        icon = GFX_goal_generic_allies
+        x = -5 y = 6
+        cost = 10
+        completion_reward = {
+            add_political_power = 70
+            add_war_support = 0.1
+            add_alliance = { target = USA }
+            add_non_aggression_pact = { target = GER }
+        }
+        description = "国際協調政策を推進し、米英と同盟および不可侵条約を結ぶ。"
+    }
+    focus = {
+        id = JAP_cultural_renaissance
+        prerequisite = { focus = JAP_minoken_consolidation }
+        icon = GFX_goal_generic_social_policy
+        x = -7 y = 7
+        cost = 10
+        completion_reward = {
+            add_stability = 0.12
+            add_political_power = 50
+        }
+        description = "文化復興を促進し国民の士気を高める。"
+    }
+    focus = {
+        id = JAP_social_security_expansion
+        prerequisite = { focus = JAP_cultural_renaissance }
+        icon = GFX_goal_generic_social_policy
+        x = -6 y = 8
+        cost = 10
+        completion_reward = {
+            add_stability = 0.1
+            add_political_power = 60
+        }
+        description = "社会保障制度を整備し国民の福祉を拡大する。"
+    }
+    focus = {
+        id = JAP_trade_liberalization
+        prerequisite = { focus = JAP_international_cooperation }
+        icon = GFX_goal_generic_trade
+        x = -4 y = 7
+        cost = 10
+        completion_reward = {
+            add_political_power = 60
+            add_war_support = 0.08
+            add_trade_deal = { target = USA value = 0.15 }
+        }
+        description = "貿易の自由化で経済活性化と外交の幅を広げる。"
+    }
+    focus = {
+        id = JAP_free_press_act
+        prerequisite = { focus = JAP_minoken_consolidation }
+        icon = GFX_goal_generic_political_pressure
+        x = -7 y = 8
+        cost = 10
+        completion_reward = {
+            add_stability = 0.08
+            add_political_power = 50
+        }
+        description = "報道の自由を保障し政治透明性を高める。"
+    }
+    focus = {
+        id = JAP_public_education_expansion
+        prerequisite = { focus = JAP_social_security_expansion }
+        icon = GFX_goal_generic_education
+        x = -6 y = 9
+        cost = 10
+        completion_reward = {
+            add_stability = 0.15
+            add_political_power = 70
+        }
+        description = "義務教育の拡充で国民の教養を向上させる。"
+    }
+
+    ####################################
+    # 共産ルート (10個)
+    ####################################
+    focus = {
+        id = JAP_peasant_commune_initiative
+        icon = GFX_goal_generic_agriculture
+        x = 5 y = 0
+        cost = 10
+        completion_reward = {
+            add_stability = 0.12
+            add_political_power = 70
+            add_war_support = 0.08
+            add_communist_support = 0.15
+        }
+        description = "農村に農民コミューンを設立し、労働者の団結を強化する。"
+    }
+    focus = {
+        id = JAP_worker_militia_organization
+        prerequisite = { focus = JAP_peasant_commune_initiative }
+        icon = GFX_goal_generic_military_citizen
+        x = 6 y = 1
+        cost = 10
+        completion_reward = {
+            add_army_experience = 40
+            add_war_support = 0.12
+            add_political_power = 60
+        }
+        description = "労働者民兵を組織し、内外の脅威に備える。"
+    }
+    focus = {
+        id = JAP_collective_farming
+        prerequisite = { focus = JAP_peasant_commune_initiative }
+        icon = GFX_goal_generic_agriculture
+        x = 4 y = 2
+        cost = 10
+        completion_reward = {
+            add_stability = 0.1
+            add_political_power = 60
+            add_war_support = 0.07
+            add_resource_bonus = { resource = steel bonus = 0.15 }
+        }
+        description = "集団農業を推進し食糧と鉄鋼の生産を増強。"
+    }
+    focus = {
+        id = JAP_red_guards_formation
+        prerequisite = { focus = JAP_worker_militia_organization }
+        icon = GFX_goal_generic_special_forces
+        x = 7 y = 2
+        cost = 10
+        completion_reward = {
+            add_special_forces = 10
+            add_army_experience = 55
+            add_political_power = 50
+        }
+        description = "赤衛兵を編成し国内の反革命勢力を制圧。"
+    }
+    focus = {
+        id = JAP_state_controlled_industry
+        prerequisite = { focus = JAP_collective_farming }
+        icon = GFX_goal_generic_construct_mil_factory
+        x = 5 y = 3
+        cost = 10
+        completion_reward = {
+            add_military_factory = 4
+            add_stability = 0.15
+            add_political_power = 70
+        }
+        description = "国家管理の工業体制を確立し軍需生産を増強。"
+    }
+    focus = {
+        id = JAP_purge_cRUSounter_revolution
+        prerequisite = { focus = JAP_red_guards_formation }
+        icon = GFX_goal_generic_political_pressure
+        x = 7 y = 3
+        cost = 10
+        completion_reward = {
+            add_stability = 0.2
+            add_political_power = 80
+            add_war_support = 0.12
+            add_secret_police = 4
+        }
+        description = "反革命分子を徹底粛清し革命体制を強固にする。"
+    }
+    focus = {
+        id = JAP_international_proletariat_solidarity
+        prerequisite = { focus = JAP_state_controlled_industry }
+        icon = GFX_goal_generic_allies
+        x = 6 y = 4
+        cost = 10
+        completion_reward = {
+            add_political_power = 60
+            add_war_support = 0.1
+            add_alliance = { target = RUS }
+        }
+        description = "国際共産主義陣営と連携し安全保障を確立。"
+    }
+    focus = {
+        id = JAP_proletarian_cultural_revolution
+        prerequisite = { focus = JAP_international_proletariat_solidarity }
+        icon = GFX_goal_generic_social_policy
+        x = 7 y = 5
+        cost = 10
+        completion_reward = {
+            add_stability = 0.15
+            add_political_power = 80
+            add_war_support = 0.12
+        }
+        description = "文化大革命で国民の意識改革を行い、社会統制を強化。"
+    }
+    focus = {
+        id = JAP_worker_peasant_alliance
+        prerequisite = { focus = JAP_proletarian_cultural_revolution }
+        icon = GFX_goal_generic_political_pressure
+        x = 6 y = 6
+        cost = 10
+        completion_reward = {
+            add_stability = 0.12
+            add_political_power = 90
+            add_war_support = 0.15
+            add_military_factory = 2
+        }
+        description = "労農同盟を強化し内政・軍事両面を推進。"
+    }
+
+    ####################################
+    # 外交・経済ルート (10個)
+    ####################################
+    focus = {
+        id = JAP_open_door_policy
+        icon = GFX_goal_generic_diplomacy
+        x = 3 y = 0
+        cost = 10
+        completion_reward = {
+            add_trade_deal = { target = USA value = 0.20 }
+            add_political_power = 60
+            add_war_support = 0.1
+        }
+        description = "開国政策で米国との経済関係を深める。"
+    }
+    focus = {
+        id = JAP_manchuria_economic_leverage
+        prerequisite = { focus = JAP_open_door_policy }
+        icon = GFX_goal_generic_resource
+        x = 4 y = 1
+        cost = 10
+        completion_reward = {
+            add_resource_bonus = { resource = oil bonus = 0.2 }
+            add_political_power = 70
+            add_trade_deal = { target = MNG value = 0.15 }
+        }
+        description = "満州の資源を活用し経済的影響力を拡大。"
+    }
+    focus = {
+        id = JAP_axis_alignment
+        prerequisite = { focus = JAP_military_unification }
+        icon = GFX_goal_generic_diplomacy
+        x = 1 y = 7
+        cost = 10
+        completion_reward = {
+            add_alliance = { target = GER }
+            add_war_support = 0.2
+            add_political_power = 80
+            add_non_aggression_pact = { target = ITA }
+        }
+        description = "枢軸国と同盟を結び、国際的影響力を強化。"
+    }
+    focus = {
+        id = JAP_international_league_withdrawal
+        prerequisite = { focus = JAP_government_centralization }
+        icon = GFX_goal_generic_diplomacy
+        x = -2 y = 6
+        cost = 10
+        completion_reward = {
+            remove_league = yes
+            add_political_power = 70
+            add_stability = 0.1
+        }
+        description = "国際連盟からの脱退を決断し主権を強化。"
+    }
+    focus = {
+        id = JAP_non_intervention_policy
+        prerequisite = { focus = JAP_democratic_revival }
+        icon = GFX_goal_generic_diplomacy
+        x = -5 y = 7
+        cost = 10
+        completion_reward = {
+            add_non_aggression_pact = { target = RUS }
+            add_political_power = 60
+            add_stability = 0.07
+        }
+        description = "不干渉政策でロシアとの緊張を緩和。"
+    }
+    focus = {
+        id = JAP_trade_agreements_asia
+        prerequisite = { focus = JAP_open_door_policy }
+        icon = GFX_goal_generic_trade
+        x = 3 y = 1
+        cost = 10
+        completion_reward = {
+            add_trade_deal = { target = CHI value = 0.12 }
+            add_trade_deal = { target = MON value = 0.1 }
+            add_political_power = 50
+        }
+        description = "アジア諸国と通商協定を締結し経済的結びつきを強化。"
+    }
+    focus = {
+        id = JAP_diplomatic_pressure_on_USA
+        prerequisite = { focus = JAP_axis_alignment }
+        icon = GFX_goal_generic_diplomacy
+        x = 2 y = 8
+        cost = 10
+        completion_reward = {
+            add_wargoal = { type = puppet_wargoal target = USA }
+            add_political_power = 100
+        }
+        description = "米国に対して傀儡化を狙う外交圧力を強化。"
+    }
+    focus = {
+        id = JAP_mongolia_puppet_state
+        prerequisite = { focus = JAP_propaganda_ministry }
+        icon = GFX_goal_generic_diplomacy
+        x = 1 y = 7
+        cost = 10
+        completion_reward = {
+            add_puppet = { country = MON puppet_type = puppet }
+            add_political_power = 60
+        }
+        description = "蒙古を傀儡国にし、東アジアの影響力を拡大。"
+    }
+    focus = {
+        id = JAP_international_trade_expo
+        prerequisite = { focus = JAP_open_door_policy }
+        icon = GFX_goal_generic_trade
+        x = 3 y = 2
+        cost = 10
+        completion_reward = {
+            add_political_power = 50
+            add_war_support = 0.05
+            add_resource_bonus = { resource = steel bonus = 0.1 }
+            add_trade_deal = { target = GER value = 0.1 }
+            add_trade_deal = { target = FRA value = 0.1 }
+            add_trade_deal = { target = USA value = 0.1 }
+        }
+        description = "国際貿易博覧会を開催し多国間貿易を促進。"
+    }
+    focus = {
+        id = JAP_embargo_on_rivals
+        prerequisite = { focus = JAP_diplomatic_pressure_on_USA }
+        icon = GFX_goal_generic_trade
+        x = 2 y = 9
+        cost = 10
+        completion_reward = {
+            add_wargoal = { type = trade_embargo_wargoal target = CHI }
+            add_political_power = 75
+        }
+        description = "競合国に対して経済制裁を仕掛ける。"
+    }
+}
